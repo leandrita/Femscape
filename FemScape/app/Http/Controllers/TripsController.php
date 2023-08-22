@@ -20,7 +20,7 @@ class TripsController extends Controller
 
         return view('indexUsers', compact('trips'));
     }
-    
+
     public function app(Request $request)
     {
         $query = Trip::query();
@@ -37,5 +37,15 @@ class TripsController extends Controller
 
         return view('index', compact('trips'));
 }
+
+ public function create()
+    {
+        return view('create');
+    }
+
+    public function edit()
+    {
+        return view('edit');
+    }
 
 }

@@ -18,6 +18,9 @@ Route::get('/', [TripsController::class, 'index']);
 
 Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
 
+Route::get('/create', [TripsController::class, 'create']);
+
+Route::get('/edit', [TripsController::class, 'edit']);
 // Route::get('/', function () {
 //     return view('nav');
 // });
