@@ -15,9 +15,9 @@
     <nav class="navbar navbar-light bg-white me-5 ms-5 border-bottom border-primary border-2">
         <div class="container-fluid">
           <a class="navbar-brand"><img src={{ asset('assets/images/Logo.svg') }} alt=""></a>
-          <form class="d-flex">
+          <form class="d-flex" action="{{ route('search') }}" method="GET">
             <div class="input-wrapper">
-            <input class="form-control me-2 rounded-pill" style="background-color:rgba(251, 253, 206, 1)" type="search" placeholder="Search" aria-label="Search">
+            <input name="s" class="form-control me-2 rounded-pill" style="background-color:rgba(251, 253, 206, 1)" type="search" placeholder="Search" aria-label="Search">
             <a href=""><img src="{{ asset('assets/images/Glass-icon.svg') }}" class="input-icon" alt=""></a>
             </div>
             <a href=""><img src="{{ asset('assets/images/Home-icon.svg') }}" class="navbar-icons" alt=""></a>

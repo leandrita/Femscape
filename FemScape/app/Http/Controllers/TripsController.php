@@ -13,4 +13,22 @@ class TripsController extends Controller
 
         return view('index', compact('trips'));
     }
+
+    public function app(Request $request)
+    {
+        $query = Trip::query();
+
+            if ($request->has('s')) {
+            $searchTerm = $request->input('s');
+            $query->where(function ($innerQuery) use ($searchTerm) {
+            $innerQuery->where('place', 'LIKE', '%' . $searchTerm . '%')
+                       ->orWhere('country', 'LIKE', '%' . $searchTerm . '%');
+            });
+    }
+
+        $trips = $query->paginate(8);
+
+        return view('index', compact('trips'));
+}
+
 }
