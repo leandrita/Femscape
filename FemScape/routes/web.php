@@ -18,9 +18,10 @@ Route::get('/', [TripsController::class, 'index']);
 
 Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
 
-Route::get('/create', [TripsController::class, 'create']);
+//Route::get('/create', [TripsController::class, 'create'])->name('create');
 
-Route::get('/edit', [TripsController::class, 'edit']);
+
+Route::get('/edit', [TripsController::class, 'edit'])->name('edit');
 // Route::get('/', function () {
 //     return view('nav');
 // });
@@ -29,3 +30,6 @@ Route::get('/edit', [TripsController::class, 'edit']);
 //     return view('navUsers');
 // });
 Route::get('/', [TripsController::class, 'app'])->name('search');
+
+Route::get('/create', [TripsController::class, 'create'])->name('create');
+Route::post('/create', [TripsController::class, 'store'])->name('create.store');

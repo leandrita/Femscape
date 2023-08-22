@@ -10,37 +10,39 @@
         <div class="row">
             <div class="liner"></div>
             <div class="col-md-12 d-flex justify-content-center align-items-center">
-                <form class="custom-form" data-toggle="validator">
-                    <h2 class="text-center mb-9 title">Crear destino</h2>
+                <h2 class="text-center mb-9 title">Crear destino</h2>
                     <div class="col-md-12">
-                        <form>
+                        <form action="{{ route('create.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="form-group">
                                 <label for="titulo">Título</label>
-                                <input type="text" class="form-control" id="titulo" placeholder="Escribe un título" required>
+                                <input type="text"  name="place" class="form-control" id="titulo" placeholder="Escribe un título" required>
                                 <div class="error-message"></div>
                             </div>
                             <div class="form-group">
                                 <label for="ubicacion">Ubicación</label>
-                                <select class="form-control mt-1" id="ubicacion" placeholder="Seleccione una ubicación" required>
+                                <select name="country" class="form-control mt-1" id="ubicacion" placeholder="Seleccione una ubicación" required>
                                     <option value="">Seleccione una ubicación</option>
                                 </select>
                             </div>
                             <div class="custom-file">
-                                <input type="file" class="form-control-file" id="imagenInput">
-                                <input type="text" class="form-control mt-1" id="titulo" placeholder="Sube una imagen" required>
+                                <input type="file" name="imagen" class="form-control-file" id="imagenInput">
+                                <input type="text"  name="image" class="form-control mt-1" id="imagen" placeholder="Sube una imagen" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Aceptar</button>
                             <button type="button" class="btn btn-secondary">Cancelar</button>
-                        </form>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mt-3">
                             <label for="comentarios">¿Por qué quieres viajar allí?</label>
-                            <textarea class="form-control" id="comentarios" rows="10" required></textarea>
+                            <textarea name="description" class="form-control" id="comentarios" rows="10" required></textarea>
+                        </form>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </main>
+
 @endsection
