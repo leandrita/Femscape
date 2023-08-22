@@ -48,8 +48,10 @@ class TripsController extends Controller
         return view('edit');
     }
 
-    public function destroy()
+    public function destroy(Trip $trip)
     {
-        //
+        $trip->delete();
+
+        return redirect()->route('indexUsers');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('connected')
-    <a href="/create"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
+    <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
     <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
 @endsection
 
@@ -15,9 +15,13 @@
                         <h5 class="card-title m-0">{{$trip->place}}</h5>
                         <p class="card-text">{{$trip->country}}</p>
                     </div>
-                    <div class="icons">
-                        <a href="/edit"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
-                        <a href=""><img src="{{ asset('assets/images/Delete-icon.svg') }}" class="m-1" alt=""></a>
+                    <div class="icons d-flex">
+                        <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+                        <form action="{{route('destroy', $trip)}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="delete-button" type="submit"><img src="{{ asset('assets/images/Delete-icon.svg') }}" class="m-1" alt=""></button>
+                        </form>
                     </div>
                 </div>
             </div>

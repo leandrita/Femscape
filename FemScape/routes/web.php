@@ -14,15 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TripsController::class, 'index']);
+Route::get('/index', [TripsController::class, 'index'])->name('index');
 
-Route::get('indexUsers', [TripsController::class, 'indexUsers']);
+Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
-Route::get('create', [TripsController::class, 'create']);
+Route::get('create', [TripsController::class, 'create'])->name('create');
 
-Route::get('edit', [TripsController::class, 'edit']);
+Route::get('edit', [TripsController::class, 'edit'])->name('edit');
 
-Route::delete('delete/{trip}', [TripsController::class, 'destroy'])->name('trip.destroy');
-
+Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 
 Route::get('/', [TripsController::class, 'app'])->name('search');

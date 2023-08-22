@@ -22,7 +22,7 @@
             <input name="s" class="form-control me-2 rounded-pill" style="background-color:rgba(251, 253, 206, 1)" type="search" placeholder="Search" aria-label="Search">
             <a href=""><img src="{{ asset('assets/images/Glass-icon.svg') }}" class="input-icon" alt=""></a>
             </div>
-            <a href="/"><img src="{{ asset('assets/images/Home-icon.svg') }}" class="navbar-icons" alt=""></a>
+            <a href="{{route('index')}}"><img src="{{ asset('assets/images/Home-icon.svg') }}" class="navbar-icons" alt=""></a>
             @yield('non-connected')
             @yield('connected')
         </form>
