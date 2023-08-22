@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TripsController::class, 'index']);
 
+
+Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
 // Route::get('/', function () {
 //     return view('nav');
 // });
