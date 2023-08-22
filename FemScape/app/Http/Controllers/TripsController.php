@@ -25,20 +25,20 @@ class TripsController extends Controller
     {
         $query = Trip::query();
 
-            if ($request->has('s')) {
+        if ($request->has('s')) {
             $searchTerm = $request->input('s');
             $query->where(function ($innerQuery) use ($searchTerm) {
-            $innerQuery->where('place', 'LIKE', '%' . $searchTerm . '%')
-                       ->orWhere('country', 'LIKE', '%' . $searchTerm . '%');
+                $innerQuery->where('place', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('country', 'LIKE', '%' . $searchTerm . '%');
             });
-    }
+        }
 
         $trips = $query->paginate(8);
 
         return view('index', compact('trips'));
-}
+    }
 
- public function create()
+    public function create()
     {
         return view('create');
     }
@@ -48,4 +48,8 @@ class TripsController extends Controller
         return view('edit');
     }
 
+    public function destroy()
+    {
+        //
+    }
 }

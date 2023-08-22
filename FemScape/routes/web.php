@@ -16,16 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TripsController::class, 'index']);
 
-Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
+Route::get('indexUsers', [TripsController::class, 'indexUsers']);
 
-Route::get('/create', [TripsController::class, 'create']);
+Route::get('create', [TripsController::class, 'create']);
 
-Route::get('/edit', [TripsController::class, 'edit']);
-// Route::get('/', function () {
-//     return view('nav');
-// });
+Route::get('edit', [TripsController::class, 'edit']);
 
-// Route::get('/navUsers', function () {
-//     return view('navUsers');
-// });
+Route::delete('delete/{trip}', [TripsController::class, 'destroy'])->name('trip.destroy');
+
+
 Route::get('/', [TripsController::class, 'app'])->name('search');
