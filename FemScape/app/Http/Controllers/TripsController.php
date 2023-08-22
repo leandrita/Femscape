@@ -50,25 +50,19 @@ class TripsController extends Controller
 
     public function store(Request $request)
 {
-    dd($request->all()); 
-
-    $validatedData = $request->validate([
-        'place' => 'required|string|max:255',
-        'country' => 'required|string',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        'description' => 'required|string',
-    ]);
 
     $imagenPath = $request->file('imagen')->store('public');
 
     $trip = new Trip();
-    $trip->place = $validatedData['place'];
-    $trip->country = $validatedData['country'];
-    $trip->image = $imagenPath;
-    $trip->description = $validatedData['description'];
+    $trip->place = $request->input('place');
+    $trip->country = $request->input('country');
+    $trip->image = $request->input('image');
+    $trip->description = $request->input('description');
+    
     $trip->save();
 
-    return view('data_saved');
+    //return view('data_saved');
+
 }
 
 }
