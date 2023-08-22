@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TripsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('rosa-test');
-});
+Route::get('/', [TripsController::class, 'index']);
 
-Route::get('/rosa-test2', function () {
-    return view('rosa-test2');
-});
+// Route::get('/', function () {
+//     return view('rosa-test');
+// });
+
+// Route::get('/rosa-test2', function () {
+//     return view('rosa-test2');
+// });
