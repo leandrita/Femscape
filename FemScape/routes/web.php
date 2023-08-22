@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TripsController::class, 'index']);
 
 // Route::get('/', function () {
-//     return view('rosa-test');
+//     return view('nav');
 // });
 
-// Route::get('/rosa-test2', function () {
-//     return view('rosa-test2');
+// Route::get('/navUsers', function () {
+//     return view('navUsers');
 // });
