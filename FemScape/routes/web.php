@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TripsController::class, 'index']);
 
+Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
+
 // Route::get('/', function () {
 //     return view('nav');
 // });
