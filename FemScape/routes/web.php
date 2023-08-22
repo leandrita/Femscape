@@ -25,3 +25,4 @@ Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
 // Route::get('/navUsers', function () {
 //     return view('navUsers');
 // });
+Route::get('/', [TripsController::class, 'app'])->name('search');
