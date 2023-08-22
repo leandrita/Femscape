@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <main class="d-flex flex-wrap" >
+    <main class="d-flex flex-wrap justify-content-center" >
         @foreach ($trips as $trip)
             <div class="card b-radius m-3">
                 <img class="b-radius size" src="{{$trip->image}}" alt="">
