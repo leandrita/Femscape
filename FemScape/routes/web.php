@@ -23,3 +23,7 @@ Route::get('/', [TripsController::class, 'index']);
 // Route::get('/navUsers', function () {
 //     return view('navUsers');
 // });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
