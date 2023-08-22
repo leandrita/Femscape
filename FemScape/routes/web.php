@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('formedit');
-});
+Route::get('/', function () {return view('formedit');});
+
+//Route::get('/', function () {return view('formcreate');});
