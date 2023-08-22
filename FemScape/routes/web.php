@@ -15,3 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TripsController::class, 'index']);
+
+// Route::get('/', function () {
+//     return view('rosa-test');
+// });
+
+// Route::get('/rosa-test2', function () {
+//     return view('rosa-test2');
+// });
