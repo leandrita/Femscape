@@ -13,4 +13,11 @@ class TripsController extends Controller
 
         return view('index', compact('trips'));
     }
+
+    public function indexUsers()
+    {
+        $trips = Trip::all();
+
+        return view('indexUsers', compact('trips'));
+    }
 }

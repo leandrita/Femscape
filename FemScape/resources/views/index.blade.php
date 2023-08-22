@@ -11,7 +11,7 @@
             <div class="card b-radius m-3">
                 <img class="b-radius size" src="{{$trip->image}}" alt="">
                 <div class="card-body">
-                <h5 class="card-title">{{$trip->place}}</h5>
+                <h5 class="card-title m-0">{{$trip->place}}</h5>
                 <p class="card-text">{{$trip->country}}</p>
                 </div>
             </div>
