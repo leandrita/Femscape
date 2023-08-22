@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('rosa-test');
+});
+
+Route::get('/rosa-test2', function () {
+    return view('rosa-test2');
 });
