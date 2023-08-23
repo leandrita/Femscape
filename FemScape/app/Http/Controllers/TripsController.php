@@ -22,12 +22,12 @@ class TripsController extends Controller
         return view('show', ['trip' => $trip]);
     }
 
-    public function indexUsers()
-    {
-        $trips = Trip::all();
+    // public function indexUsers()
+    // {
+    //     $trips = Trip::all();
 
-        return view('indexUsers', compact('trips'));
-    }
+    //     return view('indexUsers', compact('trips'));
+    // }
 
     public function app(Request $request)
     {

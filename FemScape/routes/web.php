@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexUsersController;
 use App\Http\Controllers\TripsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -24,9 +25,11 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 
+Route::get('/indexUsers', [IndexUsersController::class, 'indexUsers'])->name('indexUsers');
+
 Route::get('/index', [TripsController::class, 'index'])->name('index');
 
-Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
+// Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
 Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
 
