@@ -64,7 +64,8 @@ class TripsController extends Controller
         $trip->description = $request->input('description');
 
         $trip->save();
-        return $trip;
+
+        return redirect()->route('show', $trip);
     }
 
     public function destroy(Trip $trip)
