@@ -19,18 +19,7 @@ Route::get('/index', [TripsController::class, 'index'])->name('index');
 
 Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
-// Inicio Neema
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Fin Neema
+Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
