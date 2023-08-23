@@ -1,5 +1,8 @@
-@import url("home.css");
+/* @import url("home.css"); */
 
+*{
+    box-sizing: border box;
+}
 
 .input-wrapper {
     position: relative;
