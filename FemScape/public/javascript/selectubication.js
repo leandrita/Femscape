@@ -20,26 +20,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
 
-    Swal.fire({
-        title: '¿Quieres guardar los cambios?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Guardar',
-        denyButtonText: 'No guardar',
-    }).then((result) => {
-        if (result.isConfirmed) {
-             successMessage.textContent = 'Su registro se ha creado exitosamente';
+    var submitButton = document.querySelector('button[type="submit"]');
+
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault(); 
 
 
-            form.submit();
-        } else if (result.isDenied) {
-            // O manejar la negación de la alerta aquí
-        }
+      var formSuccess = true;
+
+      if (formSuccess) {
+        var toast = new bootstrap.Toast(document.querySelector('.toast'));
+        toast.show();
+      }
     });
-});
-
-
-
+  });

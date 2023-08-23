@@ -39,12 +39,22 @@
                     <button type="button" class="btn btn-secondary">Cancelar</button>
                 </div>
             </form>
+
         </div>
     </div>
 </main>
 
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="myModal">
+    <div class="toast-body">
+        ¡Hola Mundo! Este es un mensaje de toast.
+        <div class="mt-2 pt-2 border-top">
+            <button type="button" class="btn btn-primary btn-sm">Tomar acción</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cerrar</button>
+        </div>
+    </div>
+</div>
 @endsection
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script src="{{ asset('\public\javascript\selectubication.js') }}"></script>
 </html>
