@@ -58,10 +58,7 @@ textarea.form-control {
 
 .border-bottom  {
     border-color: var(--color-secondary);
-<<<<<<< HEAD
-=======
     /* width: 100%; */
->>>>>>> feature/reglog
 }
 
 .custom-container{
