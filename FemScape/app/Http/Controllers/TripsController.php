@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
+
 class TripsController extends Controller
 {
     public function index()
@@ -64,21 +65,33 @@ class TripsController extends Controller
     }
 
 
-    public function store(Request $request)
-{
 
-    //$imagenPath = $request->file('imagen')->store('public');
+// ...
+
+public function store(Request $request)
+{
+    $place = $request->input('place');
+    $country = $request->input('country');
+    $image = $request->file('imagen');
+    $description = $request->input('description');
+
+
+    if ($image) {
+        $imagePath = $image->store('image', 'public');
+    } else {
+        $imagePath = null;
+    }
 
     $trip = new Trip();
-    $trip->place = $request->input('place');
-    $trip->country = $request->input('country');
-    $trip->image = $request->input('image');
-    $trip->description = $request->input('description');
+    $trip->place = $place;
+    $trip->country = $country;
+    $trip->image = $imagePath;
+    $trip->description = $description;
 
     $trip->save();
 
-    //return view('data_saved');
-
+    return redirect()->route('indexUsers');
 }
+
 }
 

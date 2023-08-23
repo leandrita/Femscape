@@ -25,7 +25,7 @@
                     </select>
                 </div>
                 <div class="custom-file">
-                    <input type="file" name="imagen" class="form-control-file" id="imagenInput">
+                    <input type="file" name="imagen" class="form-control-file" id="imagenInput" required>
                     <input type="text"  name="image" class="form-control mt-4" id="imagen" placeholder="Sube una imagen" required>
                 </div>
                 <div class="form-group mt-3">
@@ -37,7 +37,6 @@
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Aceptar</button>
                     <button type="button" class="btn btn-secondary">Cancelar</button>
-                    
                 </div>
             </form>
         </div>

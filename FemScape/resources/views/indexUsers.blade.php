@@ -3,6 +3,8 @@
 @section('connected')
     <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
     <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
+    <img src="{{ asset('storage\app\public\image . $trip->image) }}" alt="Imagen">
+
 @endsection
 
 @section('content')

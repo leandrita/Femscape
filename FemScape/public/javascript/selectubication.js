@@ -20,4 +20,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    Swal.fire({
+        title: '¿Quieres guardar los cambios?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Guardar',
+        denyButtonText: 'No guardar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+             successMessage.textContent = 'Su registro se ha creado exitosamente';
+
+
+            form.submit();
+        } else if (result.isDenied) {
+            // O manejar la negación de la alerta aquí
+        }
+    });
+});
+
+
 
