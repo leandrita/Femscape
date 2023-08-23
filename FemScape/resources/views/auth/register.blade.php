@@ -36,7 +36,7 @@
       @enderror
     </div>
     <button type="submit" class="btn btn-primary">Aceptar</button>
-    <button type="submit" class="btn btn-primary">Cancelar</button>
+    <a class="btn btn-danger" href="{{ route('index') }}" role="button">Cancelar</a>
     <p>¿Ya tienes una cuenta? Accede <a href="{{route ('login') }}">aquí</a></p>
   </form>
 @endsection
