@@ -13,9 +13,9 @@ class TripsController extends Controller
 
         return view('index', compact('trips'));
 
-        
+
     }
-    
+
     public function show($id)
     {
         $trip = Trip::findOrFail($id);
@@ -62,5 +62,23 @@ class TripsController extends Controller
 
         return redirect()->route('indexUsers');
     }
+
+
+    public function store(Request $request)
+{
+
+    //$imagenPath = $request->file('imagen')->store('public');
+
+    $trip = new Trip();
+    $trip->place = $request->input('place');
+    $trip->country = $request->input('country');
+    $trip->image = $request->input('image');
+    $trip->description = $request->input('description');
+
+    $trip->save();
+
+    //return view('data_saved');
+
+}
 }
 
