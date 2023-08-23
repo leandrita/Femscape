@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 
-@section('non-connected')
-    <a href=""><img src="{{ asset('assets/images/Avatar-icon.svg') }}" class="navbar-icons" alt=""></a>
-    <link rel="stylesheet" href="/FemScape/resources/css/app.css">
+@section('connected')
+    <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
+    <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
 @endsection
+
 @section('content')
 <div class="container" style="margin-top: 4rem;">
     <div class="row">
@@ -14,9 +15,20 @@
             </div>
         </div>
         <div class="col-md-5 d-flex flex-column">
-            <h3 style="color: #FF0060; font-weight: bold;">{{ $trip->place }}</h3>
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 style="color: #FF0060; font-weight: bold;">{{ $trip->place }}</h3>
+                <div class="d-flex">
+                    <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+                    <form action="{{route('destroy', $trip)}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="delete-button" type="submit"><img src="{{ asset('assets/images/Delete-icon.svg') }}" class="m-1" alt=""></button>
+                    </form>
+                </div>
+            </div>
             <p style="color: #FF0060;">{{ $trip->country }}</p>
             <p style="color: #0079FF; margin-top: 1rem;">{{ $trip->description }}</p>
+        
         </div>
     </div>
 </div>

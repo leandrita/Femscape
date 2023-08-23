@@ -9,6 +9,7 @@
     <main class="d-flex flex-wrap justify-content-center" >
         @foreach ($trips as $trip)
             <div class="card b-radius m-3">
+                <a href="{{ route('trip.show', ['id' => $trip->id]) }}">
                 <img class="b-radius size" src="{{$trip->image}}" alt="">
                 <div class="card-body d-flex justify-content-around align-items-center">
                     <div class="text">
