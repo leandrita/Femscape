@@ -58,6 +58,7 @@ textarea.form-control {
 
 .border-bottom  {
     border-color: var(--color-secondary);
+    /* width: 100%; */
 }
 
 .custom-container{
