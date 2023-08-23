@@ -39,3 +39,11 @@ Route::get('edit', [TripsController::class, 'edit'])->name('edit');
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 
 Route::get('/', [TripsController::class, 'app'])->name('search');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
