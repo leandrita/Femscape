@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 
-@section('connected')
+{{-- @section('connected')
     <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
     <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
-@endsection
+@endsection --}}
 
 @section('content')
 <div class="container" style="margin-top: 4rem;">

@@ -11,10 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/formedit.css') }}">
-
-    
-
   </head>
+
   <body>
     <nav class="navbar navbar-light bg-white me-5 ms-5 border-bottom border-primary border-2">
         <div class="container-fluid">
@@ -25,8 +23,21 @@
             <a href=""><img src="{{ asset('assets/images/Glass-icon.svg') }}" class="input-icon" alt=""></a>
             </div>
             <a href="{{route('index')}}"><img src="{{ asset('assets/images/Home-icon.svg') }}" class="navbar-icons" alt=""></a>
-            @yield('non-connected')
-            @yield('connected')
+
+            @auth
+                <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
+
+                <a href="{{route('logout')}}"><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons" alt=""></a>
+                
+                {{-- <form method="POST" action="{{ route('logout') }}">
+                  @csrf --}}
+                  {{-- <button type="submit"><img src="{{ asset('assets/images/Logout-icon.svg') }}" alt=""></button> --}}
+            @endauth
+
+            @guest
+                <a href="{{route ('register') }}"><img src="{{ asset('assets/images/Avatar-icon.svg') }}" class="navbar-icons" alt=""></a> 
+            @endguest
+
         </form>
         </div>
       </nav>
