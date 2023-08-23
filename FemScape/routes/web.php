@@ -18,6 +18,8 @@ Route::get('/index', [TripsController::class, 'index'])->name('index');
 
 Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
+Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
+
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
 Route::get('edit', [TripsController::class, 'edit'])->name('edit');

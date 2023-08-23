@@ -12,6 +12,14 @@ class TripsController extends Controller
         $trips = Trip::all();
 
         return view('index', compact('trips'));
+
+        
+    }
+    
+    public function show($id)
+    {
+        $trip = Trip::findOrFail($id);
+        return view('show', ['trip' => $trip]);
     }
 
     public function indexUsers()
@@ -55,3 +63,4 @@ class TripsController extends Controller
         return redirect()->route('indexUsers');
     }
 }
+
