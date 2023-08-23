@@ -30,7 +30,9 @@ Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
-Route::get('edit', [TripsController::class, 'edit'])->name('edit');
+Route::get('{trip}/edit', [TripsController::class, 'edit'])->name('edit');
+
+Route::put('{trip}', [TripsController::class, 'update'])->name('update');
 
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 

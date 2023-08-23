@@ -18,7 +18,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h3 style="color: #FF0060; font-weight: bold;">{{ $trip->place }}</h3>
                 <div class="d-flex">
-                    <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+                    <a href="{{route('edit', $trip)}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
                     <form action="{{route('destroy', $trip)}}" method="POST">
                         @csrf
                         @method('delete')
