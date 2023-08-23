@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TripsController::class, 'index']);
 
-Route::get('/indexUsers', [TripsController::class, 'indexUsers']);
+Route::get('/indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
-//Route::get('/create', [TripsController::class, 'create'])->name('create');
+Route::get('/create', [TripsController::class, 'create'])->name('create');
 
 
 Route::get('/edit', [TripsController::class, 'edit'])->name('edit');
@@ -31,7 +31,8 @@ Route::get('/edit', [TripsController::class, 'edit'])->name('edit');
 // });
 Route::get('/', [TripsController::class, 'app'])->name('search');
 
-Route::get('/create', [TripsController::class, 'create'])->name('create');
+//Route::get('/create', [TripsController::class, 'create'])->name('create');
 Route::post('/create', [TripsController::class, 'store'])->name('create.store');
-Route::get('/confirmation-modal', function () {
-    return view('confirmation-modal'); })->name('confirmation-modal');
+//Route::get('/confirmation-modal', function () {
+   // return view('confirmation-modal'); })->name('confirmation-modal');
+

@@ -51,14 +51,14 @@ class TripsController extends Controller
     public function store(Request $request)
 {
 
-    $imagenPath = $request->file('imagen')->store('public');
+    //$imagenPath = $request->file('imagen')->store('public');
 
     $trip = new Trip();
     $trip->place = $request->input('place');
     $trip->country = $request->input('country');
     $trip->image = $request->input('image');
     $trip->description = $request->input('description');
-    
+
     $trip->save();
 
     //return view('data_saved');
