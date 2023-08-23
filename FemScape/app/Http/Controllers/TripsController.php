@@ -43,16 +43,40 @@ class TripsController extends Controller
         return view('create');
     }
 
-    public function show($id)
+    public function store(Request $request)
     {
-        $trips = Trip::find($id);
+        $trip = new Trip();
 
-        return view('show', compact('trips'));
+        $trip->place = $request->place;
+        $trip->country = $request->country;
+        $trip->image = $request->image;
+        $trip->description = $request->description;
+
+        $trip->save();
+
+        return redirect()->route('show', $trip);
     }
 
-    public function edit()
+    public function show(Trip $trip)
     {
-        return view('edit');
+        return view('show', compact('trip'));
+    }
+
+    public function edit(Trip $trip)
+    {
+        return view('edit', compact('trip'));
+    }
+
+    public function update(Request $request, Trip $trip)
+    {
+        $trip->place = $request->place;
+        $trip->country = $request->country;
+        $trip->image = $request->image;
+        $trip->description = $request->description;
+
+        $trip->save();
+
+        return redirect()->route('show', $trip);
     }
 
     public function destroy(Trip $trip)

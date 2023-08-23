@@ -7,17 +7,17 @@
 
 @section('content')
     <main>
-        {{-- <img class="b-radius size" src="{{$trips->image}}" alt=".."> --}}
-        <h1>{{$trips->place}}</h1>
-        <h2>{{$trips->country}}</h2>
+        <img class="b-radius size" src="{{$trip->image}}" alt="..">
+        <h1>{{$trip->place}}</h1>
+        <h2>{{$trip->country}}</h2>
         <div class="icons d-flex">
-            <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
-            <form action="{{route('destroy', $trips)}}" method="POST">
+            <a href="{{route('edit', $trip)}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+            <form action="{{route('destroy', $trip)}}" method="POST">
                 @csrf
                 @method('delete')
                 <button class="delete-button" type="submit"><img src="{{ asset('assets/images/Delete-icon.svg') }}" class="m-1" alt=""></button>
             </form>
         </div>
-        <p>{{$trips->description}}</p>
+        <p>{{$trip->description}}</p>
     </main>
 @endsection

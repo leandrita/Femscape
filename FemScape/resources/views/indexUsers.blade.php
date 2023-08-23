@@ -16,7 +16,7 @@
                         <p class="card-text">{{$trip->country}}</p>
                     </div>
                     <div class="icons d-flex">
-                        <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+                        <a href="{{route('edit', $trip)}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
                         <form action="{{route('destroy', $trip)}}" method="POST">
                             @csrf
                             @method('delete')

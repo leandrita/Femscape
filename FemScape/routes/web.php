@@ -14,15 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', [TripsController::class, 'index'])->name('index');
+Route::get('index', [TripsController::class, 'index'])->name('index');
 
 Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
-Route::get('{id}', [TripsController::class, 'show'])->name('show');
+Route::post('index', [TripsController::class, 'store'])->name('store');
 
-Route::get('edit', [TripsController::class, 'edit'])->name('edit');
+Route::get('{trip}', [TripsController::class, 'show'])->name('show');
+
+Route::get('{trip}/edit', [TripsController::class, 'edit'])->name('edit');
+
+Route::put('{trip}', [TripsController::class, 'update'])->name('update');
 
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 
