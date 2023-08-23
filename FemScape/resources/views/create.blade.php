@@ -37,11 +37,15 @@
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Aceptar</button>
                     <button type="button" class="btn btn-secondary">Cancelar</button>
+                    
                 </div>
             </form>
         </div>
     </div>
 </main>
 
-
 @endsection
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('\public\javascript\selectubication.js') }}"></script>
+</html>

@@ -33,3 +33,5 @@ Route::get('/', [TripsController::class, 'app'])->name('search');
 
 Route::get('/create', [TripsController::class, 'create'])->name('create');
 Route::post('/create', [TripsController::class, 'store'])->name('create.store');
+Route::get('/confirmation-modal', function () {
+    return view('confirmation-modal'); })->name('confirmation-modal');
