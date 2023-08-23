@@ -43,6 +43,13 @@ class TripsController extends Controller
         return view('create');
     }
 
+    public function show($id)
+    {
+        $trips = Trip::find($id);
+
+        return view('show', compact('trips'));
+    }
+
     public function edit()
     {
         return view('edit');

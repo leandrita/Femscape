@@ -20,6 +20,8 @@ Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUse
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
+Route::get('{id}', [TripsController::class, 'show'])->name('show');
+
 Route::get('edit', [TripsController::class, 'edit'])->name('edit');
 
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
