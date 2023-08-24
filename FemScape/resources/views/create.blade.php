@@ -2,8 +2,6 @@
 
 @section('content')
 <main class="container mt-5 d-flex justify-content-center">
-    {{-- <div class="row justify-content-center align-items-center">
-        <div class="col-md-8"> --}}
             <form class="custom-form w-form" action="{{ route('create.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <h2 class="text-center mb-9 title">Crear destino</h2>
@@ -29,10 +27,7 @@
                         <textarea name="description" class="form-control flex-grow-1" id="comentarios" rows="10" required></textarea>
                     </div>
                 </div>
-                
             </form>
-        {{-- </div>
-    </div> --}}
 </main>
 
 @endsection
