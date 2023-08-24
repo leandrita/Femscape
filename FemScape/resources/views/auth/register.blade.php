@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('register') }}" method="POST" novalidate>
+<main class="d-flex justify-content-center">
+<form action="{{ route('register') }}" method="POST" novalidate class="reg-form">
     @csrf
     <h2 class="text-center mb-3 title border-bottom border-3 pb-2">Registro de usuario</h2>
     
@@ -31,8 +32,11 @@
       <p class="alert alert-danger" role="alert">{{ $message }}</p>
       @enderror
     </div>
+    <div class="d-flex justify-content-evenly">
     <button type="submit" class="btn btn-primary">Aceptar</button>
     <a class="btn btn-danger" href="{{ route('index') }}" role="button">Cancelar</a>
-    <p>¿Ya tienes una cuenta? Accede <a href="{{route ('login') }}">aquí</a></p>
+    </div>
+    <p class="accede">¿Ya tienes una cuenta? Accede <a href="{{route ('login') }}">aquí</a></p>
   </form>
+</main>
 @endsection

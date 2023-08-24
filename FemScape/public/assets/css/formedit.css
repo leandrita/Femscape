@@ -75,6 +75,16 @@ label{
     font-weight: bolder;
 }
 
-.edit-form{
+.w-form{
     width: 70%;
+}
+
+@media (max-width: 400px){
+    .w-form{
+        width: 80%;
+    } 
+
+    .col{
+        flex-direction: column;
+    }
 }
