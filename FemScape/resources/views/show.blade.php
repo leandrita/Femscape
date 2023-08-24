@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 
-
 @section('content')
 
 <div class="container" style="margin-top: 4rem;">
@@ -33,11 +32,9 @@
             </div>
             <p style="color: #FF0060;">{{ $trip->country }}</p>
             <p style="color: #0079FF; margin-top: 1rem;">{{ $trip->description }}</p>
-        
         </div>
     </div>
 </div>
-
 
 @endsection
 

@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-{{-- @section('non-connected')
-    <a href="{{route ('register') }}"><img src="{{ asset('assets/images/Avatar-icon.svg') }}" class="navbar-icons" alt=""></a>
-@endsection --}}
-
 @section('content')
     <main class="d-flex flex-wrap justify-content-center" >
         @foreach ($trips as $trip)

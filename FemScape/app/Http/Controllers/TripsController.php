@@ -20,13 +20,6 @@ class TripsController extends Controller
         return view('show', ['trip' => $trip]);
     }
 
-    // public function indexUsers()
-    // {
-    //     $trips = Trip::all();
-
-    //     return view('indexUsers', compact('trips'));
-    // }
-
     public function app(Request $request)
     {
         $query = Trip::query();
@@ -44,50 +37,10 @@ class TripsController extends Controller
         return view('index', compact('trips'));
     }
 
-    // public function create()
-    // {
-    //     return view('create');
-    // }
-
-    // public function edit(Trip $trip)
-    // {
-
-    //     return view('edit', compact('trip'));
-    // }
-
-    // public function update(Request $request, Trip $trip)
-    // {
-
-    //     $trip->place = $request->input('place');
-    //     $trip->country = $request->input('country');
-    //     $trip->image = $request->input('image');
-    //     $trip->description = $request->input('description');
-
-    //     $trip->save();
-
-    //     return redirect()->route('show', $trip);
-    // }
-
     public function destroy(Trip $trip)
     {
         $trip->delete();
 
         return redirect()->route('indexUsers');
     }
-
-
-    // public function store(Request $request)
-    // {
-    //     //$imagenPath = $request->file('imagen')->store('public');
-
-    //     $trip = new Trip();
-    //     $trip->place = $request->input('place');
-    //     $trip->country = $request->input('country');
-    //     $trip->image = $request->input('image');
-    //     $trip->description = $request->input('description');
-
-    //     $trip->save();
-
-    //     return redirect()->route('indexUsers');
-    // }
 }

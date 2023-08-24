@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-{{-- @section('connected')
-    <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
-    <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
-@endsection --}}
-
 @section('content')
     <main class="d-flex flex-wrap justify-content-center" >
         @foreach ($trips as $trip)
