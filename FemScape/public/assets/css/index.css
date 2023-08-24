@@ -46,3 +46,19 @@ body{
 a{
     text-decoration: none;
 }
+
+.close-btn{
+    border: none;
+    background-color: #FF0060;
+    color: white;
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+strong {
+    color: #0079FF;
+}
+
+.alert-box{
+    background-color: #FBFDCE;
+}

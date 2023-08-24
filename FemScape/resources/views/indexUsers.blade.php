@@ -3,9 +3,9 @@
 @section('content')    
     
 @if(session('success'))
-<div id="myAlert" class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+<div id="myAlert" class="alert-box alert-dismissible fade show text-center" role="alert">
     <strong>{{ session('success') }}</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close-btn" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
