@@ -1,0 +1,52 @@
+.place{
+    color: #FF0060;
+    font-weight: bold;
+}
+
+.country{
+    color: #FF0060;
+}
+
+.description{
+    color: #0079FF;
+    margin-top: 1rem;
+}
+
+.w-container{
+    width: 40%;
+}
+
+.w-img{
+    width: 28rem;
+}
+
+.w-text{
+    width: 35%;
+}
+
+.m-main{
+    margin-top: 5rem;
+}
+
+@media (max-width: 400px){
+    .m-main{
+        flex-direction: column;
+    }
+
+    .w-container, .w-text{
+        width: 90%;
+    }
+
+    .w-img {
+        width: 18rem;
+    }
+
+    .w-text{
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .description {
+        text-align: center;
+    }
+}

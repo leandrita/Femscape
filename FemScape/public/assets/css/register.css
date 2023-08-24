@@ -1,0 +1,17 @@
+.reg-form{
+    width: 30%;
+    padding: 1.5rem;
+    margin: 2rem;
+    border-radius: 20px;
+    border: 4px solid var(--yellow-light, #FBFDCE);
+}
+
+.accede{
+    text-align: center;
+}
+
+@media (max-width: 400px){
+    .reg-form{
+        width: 90%;
+    }
+}

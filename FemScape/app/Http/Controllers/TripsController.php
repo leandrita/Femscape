@@ -12,21 +12,12 @@ class TripsController extends Controller
         $trips = Trip::all();
 
         return view('index', compact('trips'));
-
-
     }
 
     public function show($id)
     {
         $trip = Trip::findOrFail($id);
         return view('show', ['trip' => $trip]);
-    }
-
-    public function indexUsers()
-    {
-        $trips = Trip::all();
-
-        return view('indexUsers', compact('trips'));
     }
 
     public function app(Request $request)
@@ -46,41 +37,17 @@ class TripsController extends Controller
         return view('index', compact('trips'));
     }
 
-    public function create()
-    {
-        return view('create');
-    }
-
-    public function edit()
-    {
-        return view('edit');
-    }
-
     public function destroy(Trip $trip)
     {
         $trip->delete();
 
         return redirect()->route('indexUsers');
     }
-
-
-    public function store(Request $request)
-{
-
-    //$imagenPath = $request->file('imagen')->store('public');
-
-    $trip = new Trip();
-    $trip->place = $request->input('place');
-    $trip->country = $request->input('country');
-    $trip->image = $request->input('image');
-    $trip->description = $request->input('description');
-
-    $trip->save();
-
-    //return view('data_saved');
-
 }
+<<<<<<< HEAD
 
 
 }
 
+=======
+>>>>>>> 45927ecd4fe74df5ebc1f9da4fb30cb6c881a115

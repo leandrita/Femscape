@@ -1,15 +1,20 @@
 @extends('layouts.app')
 
-@section('connected')
-    <a href="{{route('create')}}"><img src="{{ asset('assets/images/Create-icon.svg') }}" class="navbar-icons" alt=""></a>
-    <a href=""><img src="{{ asset('assets/images/Logout-icon.svg') }}" class="navbar-icons logout" alt=""></a>
-@endsection
+@section('content')    
+    
+@if(session('success'))
+<div id="myAlert" class="alert alert-box alert-dismissible fade show text-center" role="alert">
+    <strong>{{ session('success') }}</strong>
+    <button type="button" class="close close-btn" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 
-@section('content')
-    <main class="d-flex flex-wrap justify-content-center" >
+    <main class="d-flex flex-wrap justify-content-center" >        
         @foreach ($trips as $trip)
             <div class="card b-radius m-3">
-                <a href="{{ route('trip.show', ['id' => $trip->id]) }}">
+                <a href="{{ route('show', $trip->id) }}">
                 <img class="b-radius size" src="{{$trip->image}}" alt="">
                 <div class="card-body d-flex justify-content-around align-items-center">
                     <div class="text">
@@ -17,7 +22,7 @@
                         <p class="card-text">{{$trip->country}}</p>
                     </div>
                     <div class="icons d-flex">
-                        <a href="{{route('edit')}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
+                        <a href="{{route('edit', $trip)}}"><img src="{{ asset('assets/images/Edit-icon.svg') }}" class="m-1" alt=""></a>
                         <form action="{{route('destroy', $trip)}}" method="POST">
                             @csrf
                             @method('delete')
