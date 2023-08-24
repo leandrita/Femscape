@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const ubicacionSelect = document.getElementById('ubicacion');
 
