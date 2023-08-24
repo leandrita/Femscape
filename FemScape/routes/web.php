@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\IndexUsersController;
 use App\Http\Controllers\TripsController;
@@ -35,8 +36,6 @@ Route::get('/index', [TripsController::class, 'index'])->name('index');
 
 Route::get('{trip}', [TripsController::class, 'show'])->name('show');
 
-Route::get('create', [TripsController::class, 'create'])->name('create');
-
 Route::get('{trip}/edit', [EditController::class, 'edit'])->name('edit');
 Route::put('{trip}', [EditController::class, 'update'])->name('update');
 
@@ -44,10 +43,14 @@ Route::put('{trip}', [EditController::class, 'update'])->name('update');
 
 // Route::put('{trip}', [TripsController::class, 'update'])->name('update');
 
+Route::get('create', [CreateController::class, 'create'])->name('create');
+Route::post('create', [CreateController::class, 'store'])->name('create.store');
+
+// Route::get('create', [TripsController::class, 'create'])->name('create');
+// Route::post('create', [TripsController::class, 'store'])->name('create');
+//Route::get('/confirmation-modal', function () {
+// return view('confirmation-modal'); })->name('confirmation-modal');
+
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 
 Route::get('/', [TripsController::class, 'app'])->name('search');
-
-Route::post('create', [TripsController::class, 'store'])->name('create');
-//Route::get('/confirmation-modal', function () {
-   // return view('confirmation-modal'); })->name('confirmation-modal');

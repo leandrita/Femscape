@@ -44,10 +44,10 @@ class TripsController extends Controller
         return view('index', compact('trips'));
     }
 
-    public function create()
-    {
-        return view('create');
-    }
+    // public function create()
+    // {
+    //     return view('create');
+    // }
 
     // public function edit(Trip $trip)
     // {
@@ -76,18 +76,18 @@ class TripsController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        //$imagenPath = $request->file('imagen')->store('public');
+    // public function store(Request $request)
+    // {
+    //     //$imagenPath = $request->file('imagen')->store('public');
 
-        $trip = new Trip();
-        $trip->place = $request->input('place');
-        $trip->country = $request->input('country');
-        $trip->image = $request->input('image');
-        $trip->description = $request->input('description');
+    //     $trip = new Trip();
+    //     $trip->place = $request->input('place');
+    //     $trip->country = $request->input('country');
+    //     $trip->image = $request->input('image');
+    //     $trip->description = $request->input('description');
 
-        $trip->save();
+    //     $trip->save();
 
-        return redirect()->route('indexUsers');
-    }
+    //     return redirect()->route('indexUsers');
+    // }
 }
