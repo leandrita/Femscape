@@ -44,10 +44,6 @@ class TripsController extends Controller
         return redirect()->route('indexUsers');
     }
 }
-<<<<<<< HEAD
 
 
-}
 
-=======
->>>>>>> 45927ecd4fe74df5ebc1f9da4fb30cb6c881a115
