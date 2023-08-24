@@ -12,8 +12,6 @@ class TripsController extends Controller
         $trips = Trip::all();
 
         return view('index', compact('trips'));
-
-
     }
 
     public function show($id)
@@ -65,20 +63,20 @@ class TripsController extends Controller
 
 
     public function store(Request $request)
-{
+    {
 
-    //$imagenPath = $request->file('imagen')->store('public');
+        //$imagenPath = $request->file('imagen')->store('public');
 
-    $trip = new Trip();
-    $trip->place = $request->input('place');
-    $trip->country = $request->input('country');
-    $trip->image = $request->input('image');
-    $trip->description = $request->input('description');
+        $trip = new Trip();
+        $trip->place = $request->input('place');
+        $trip->country = $request->input('country');
+        $trip->image = $request->input('image');
+        $trip->description = $request->input('description');
 
-    $trip->save();
+        $trip->save();
 
-    //return view('data_saved');
+        //return view('data_saved');
 
+        return redirect()->route('indexUsers');
+    }
 }
-}
-
