@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
-@section('content')
-    <main class="d-flex flex-wrap justify-content-center" >
+@section('content')    
+    
+@if(session('success'))
+<div id="myAlert" class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+    <strong>{{ session('success') }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
+    <main class="d-flex flex-wrap justify-content-center" >        
         @foreach ($trips as $trip)
             <div class="card b-radius m-3">
                 <a href="{{ route('show', $trip->id) }}">

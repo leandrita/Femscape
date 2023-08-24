@@ -24,6 +24,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
-        return redirect()->route('indexUsers');
+        return redirect()->route('indexUsers')->with('success', '¡Te has conectado correctamente!');
     }
 }

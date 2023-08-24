@@ -30,7 +30,7 @@ class RegisterController extends Controller
     
         auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('indexUsers');
+        return redirect()->route('indexUsers')->with('success', '¡Te has registrado correctamente!');
     }
 
 }
