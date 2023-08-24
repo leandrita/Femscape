@@ -6,7 +6,7 @@
                 @csrf
                 <h2 class="text-center mb-9 title">Crear destino</h2>
                 <div class="w-100 border-bottom border my-10 line"></div>
-                <div class="d-flex justify-content-around">
+                <div class="d-flex justify-content-around col">
                 
                     <div class="form-group">
                         <label class="mt-4" for="titulo">Título</label>
