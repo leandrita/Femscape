@@ -14,10 +14,3 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => console.error('Error cargando el JSON de países:', error));
 });
-
-
-//JAVASCRIPT MODAL
-
-
-
-

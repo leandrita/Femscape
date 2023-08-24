@@ -80,5 +80,7 @@ class TripsController extends Controller
     //return view('data_saved');
 
 }
+
+
 }
 

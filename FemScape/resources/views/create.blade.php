@@ -34,15 +34,54 @@
                         <textarea name="description" class="form-control flex-grow-1" id="comentarios" rows="10" required></textarea>
                     </div>
                 </div>
+
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Aceptar</button>
                     <button type="button" class="btn btn-secondary">Cancelar</button>
-                    
+
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Su registro ha sido creado exitosamente
+                            <div class="mt-2 pt-2 border-top">
+                                <button type="button" id="acceptButton" class="btn btn-primary btn-sm">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </form>
         </div>
     </div>
 </main>
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toastTrigger = document.querySelector(".toast");
+        const toast = new bootstrap.Toast(toastTrigger);
+
+        const form = document.querySelector(".custom-form");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+
+            toast.show();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const acceptButton = document.getElementById("acceptButton");
+
+        acceptButton.addEventListener("click", function() {
+           window.location.href = "{{ route('indexUsers') }}";
+        });
+    });
+    
+</script>
 
 @endsection
 
