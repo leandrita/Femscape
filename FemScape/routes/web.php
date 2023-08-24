@@ -26,16 +26,18 @@ Route::get('/index', [TripsController::class, 'index'])->name('index');
 
 Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
-Route::get('/show/{id}', [TripsController::class, 'show'])->name('trip.show');
+Route::get('{trip}', [TripsController::class, 'show'])->name('show');
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
-Route::get('edit', [TripsController::class, 'edit'])->name('edit');
+Route::get('{trip}/edit', [TripsController::class, 'edit'])->name('edit');
+
+Route::put('{trip}', [TripsController::class, 'update'])->name('update');
 
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 
 Route::get('/', [TripsController::class, 'app'])->name('search');
 
-Route::post('/create', [TripsController::class, 'store'])->name('create.store');
+Route::post('create', [TripsController::class, 'store'])->name('create');
 //Route::get('/confirmation-modal', function () {
    // return view('confirmation-modal'); })->name('confirmation-modal');

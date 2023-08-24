@@ -49,9 +49,23 @@ class TripsController extends Controller
         return view('create');
     }
 
-    public function edit()
+    public function edit(Trip $trip)
     {
-        return view('edit');
+
+        return view('edit', compact('trip'));
+    }
+
+    public function update(Request $request, Trip $trip)
+    {
+
+        $trip->place = $request->input('place');
+        $trip->country = $request->input('country');
+        $trip->image = $request->input('image');
+        $trip->description = $request->input('description');
+
+        $trip->save();
+
+        return redirect()->route('show', $trip);
     }
 
     public function destroy(Trip $trip)
@@ -64,7 +78,6 @@ class TripsController extends Controller
 
     public function store(Request $request)
     {
-
         //$imagenPath = $request->file('imagen')->store('public');
 
         $trip = new Trip();
@@ -74,8 +87,6 @@ class TripsController extends Controller
         $trip->description = $request->input('description');
 
         $trip->save();
-
-        //return view('data_saved');
 
         return redirect()->route('indexUsers');
     }
