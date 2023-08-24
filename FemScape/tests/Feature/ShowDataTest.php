@@ -6,17 +6,15 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class CreateTest extends TestCase
+class ShowDataTest extends TestCase
 {
     /**
      * A basic feature test example.
      */
-      public function test_create_view(): void
+    public function test_showdata_view(): void
     {
-        $this->withoutexceptionHandling();
-        $response = $this->get('/create');
+        $response = $this->get('/show/');
 
         $response->assertStatus(200);
     }
-
 }
