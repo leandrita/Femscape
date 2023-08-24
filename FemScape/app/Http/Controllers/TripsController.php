@@ -20,12 +20,12 @@ class TripsController extends Controller
         return view('show', ['trip' => $trip]);
     }
 
-    public function indexUsers()
-    {
-        $trips = Trip::all();
+    // public function indexUsers()
+    // {
+    //     $trips = Trip::all();
 
-        return view('indexUsers', compact('trips'));
-    }
+    //     return view('indexUsers', compact('trips'));
+    // }
 
     public function app(Request $request)
     {
@@ -49,24 +49,24 @@ class TripsController extends Controller
         return view('create');
     }
 
-    public function edit(Trip $trip)
-    {
+    // public function edit(Trip $trip)
+    // {
 
-        return view('edit', compact('trip'));
-    }
+    //     return view('edit', compact('trip'));
+    // }
 
-    public function update(Request $request, Trip $trip)
-    {
+    // public function update(Request $request, Trip $trip)
+    // {
 
-        $trip->place = $request->input('place');
-        $trip->country = $request->input('country');
-        $trip->image = $request->input('image');
-        $trip->description = $request->input('description');
+    //     $trip->place = $request->input('place');
+    //     $trip->country = $request->input('country');
+    //     $trip->image = $request->input('image');
+    //     $trip->description = $request->input('description');
 
-        $trip->save();
+    //     $trip->save();
 
-        return redirect()->route('show', $trip);
-    }
+    //     return redirect()->route('show', $trip);
+    // }
 
     public function destroy(Trip $trip)
     {

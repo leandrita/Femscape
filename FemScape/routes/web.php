@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\EditController;
+use App\Http\Controllers\IndexUsersController;
 use App\Http\Controllers\TripsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
+use Psy\Command\EditCommand;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,18 +25,24 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
+Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/indexUsers', [IndexUsersController::class, 'indexUsers'])->name('indexUsers');
 
 Route::get('/index', [TripsController::class, 'index'])->name('index');
 
-Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
+// Route::get('indexUsers', [TripsController::class, 'indexUsers'])->name('indexUsers');
 
 Route::get('{trip}', [TripsController::class, 'show'])->name('show');
 
 Route::get('create', [TripsController::class, 'create'])->name('create');
 
-Route::get('{trip}/edit', [TripsController::class, 'edit'])->name('edit');
+Route::get('{trip}/edit', [EditController::class, 'edit'])->name('edit');
+Route::put('{trip}', [EditController::class, 'update'])->name('update');
 
-Route::put('{trip}', [TripsController::class, 'update'])->name('update');
+// Route::get('{trip}/edit', [TripsController::class, 'edit'])->name('edit');
+
+// Route::put('{trip}', [TripsController::class, 'update'])->name('update');
 
 Route::delete('indexUsers/{trip}', [TripsController::class, 'destroy'])->name('destroy');
 

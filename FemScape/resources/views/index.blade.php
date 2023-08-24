@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('non-connected')
+{{-- @section('non-connected')
     <a href="{{route ('register') }}"><img src="{{ asset('assets/images/Avatar-icon.svg') }}" class="navbar-icons" alt=""></a>
-@endsection
+@endsection --}}
 
 @section('content')
     <main class="d-flex flex-wrap justify-content-center" >
