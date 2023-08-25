@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Trip;
 
 class CreateTest extends TestCase
 {
@@ -19,13 +20,25 @@ class CreateTest extends TestCase
     /**
      * A basic feature test example.
      */
-      public function test_create_view(): void
+    public function test_can_create_trip()
     {
-        $this->withoutexceptionHandling();
-        $response = $this->get('/create');
+        $trip = Trip::factory()->create();
 
-        $response->assertStatus(200);
+        $response = $this->actingAs($trip)->post('/trips', [
+            'place' => 'Paris',
+            'country' => 'France',
+            'description' => 'The city of love',
+            'image' => 'paris.jpg',
+        ]);
+
+        $response->assertStatus(201);
+
+        $this->assertDatabaseHas('trips', [
+            'place' => 'Paris',
+            'country' => 'France',
+            'description' => 'The city of love',
+            'image' => 'paris.jpg',
+        ]);
     }
-
-
 }
+
