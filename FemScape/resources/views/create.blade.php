@@ -27,9 +27,6 @@
                         <textarea name="description" class="form-control flex-grow-1" id="comentarios" rows="10" required></textarea>
                     </div>
                 </div>
-
-
-
                     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-body">
                             Su registro ha sido creado exitosamente
