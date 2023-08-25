@@ -13,7 +13,7 @@ class IndexUsersTest extends TestCase
 {
     parent::setUp();
 
-    
+
     $this->withoutMiddleware(\App\Http\Middleware\Authenticate::class);
 }
 
