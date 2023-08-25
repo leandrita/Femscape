@@ -7,7 +7,7 @@
                 <h2 class="text-center mb-9 title">Crear destino</h2>
                 <div class="w-100 border-bottom border my-10 line"></div>
                 <div class="d-flex justify-content-around col">
-                
+
                     <div class="form-group">
                         <label class="mt-4" for="titulo">Título</label>
                         <input type="text"  name="place" class="form-control" id="titulo" placeholder="Escribe un título" required>
@@ -16,6 +16,7 @@
                         <select name="country" class="form-control" id="ubicacion" placeholder="Seleccione una ubicación" required>
                             <option value="">Seleccione una ubicación</option>
                         </select>
+                        <a href=""><img src="{{ asset('assets/images/folder.png') }}" class="folder-icon" alt=""></a>
                         <input type="file" name="imagen" class="form-control-file mt-4" id="imagenInput">
                         <input type="text"  name="image" class="form-control" id="imagen" placeholder="Sube una imagen" required>
                         <button type="submit" class="btn btn-primary mt-8">Aceptar</button>
@@ -33,5 +34,6 @@
 @endsection
 
 
-<script src="{{ asset('\public\javascript\selectubication.js') }}"></script> 
+<script src="{{ asset('\public\javascript\selectubication.js') }}"></script>
 </html>
+

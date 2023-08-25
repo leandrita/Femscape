@@ -79,10 +79,19 @@ label{
     width: 70%;
 }
 
+
+.folder-icon {
+    position: relative;
+    right: 10px;
+    top: 8%;
+    transform: translateY(30%);
+    width: 4rem;
+}
+
 @media (max-width: 400px){
     .w-form{
         width: 80%;
-    } 
+    }
 
     .col{
         flex-direction: column;
