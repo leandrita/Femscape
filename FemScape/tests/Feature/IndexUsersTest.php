@@ -8,6 +8,15 @@ use Tests\TestCase;
 
 class IndexUsersTest extends TestCase
 {
+
+    public function setUp(): void
+{
+    parent::setUp();
+
+    
+    $this->withoutMiddleware(\App\Http\Middleware\Authenticate::class);
+}
+
     /**
      * A basic feature test example.
      */
