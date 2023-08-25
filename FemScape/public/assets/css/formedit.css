@@ -88,3 +88,11 @@ label{
         flex-direction: column;
     }
 }
+
+.folder-icon {
+    position: relative;
+    right: 10px;
+    top: 8%;
+    transform: translateY(30%);
+    width: 4rem;
+}
