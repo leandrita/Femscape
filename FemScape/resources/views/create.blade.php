@@ -16,8 +16,9 @@
                         <select name="country" class="form-control" id="ubicacion" placeholder="Seleccione una ubicación" required>
                             <option value="">Seleccione una ubicación</option>
                         </select>
+                        <a href=""><img src="{{ asset('assets/images/folder.png') }}" class="input-icon" alt=""></a>
                         <input type="file" name="imagen" class="form-control-file mt-4" id="imagenInput">
-                        <input type="text"  name="image" class="form-control" id="imagen" placeholder="Sube una imagen" required>
+                        <input type="text"  name="image" class="form-control" id="imagen" placeholder="              Sube una imagen" required>
                         <button type="submit" class="btn btn-primary mt-8">Aceptar</button>
                         <a href="{{ route('indexUsers') }}"><button type="button" class="btn btn-secondary mt-8">Cancelar</button></a>
                     </div>
