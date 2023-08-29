@@ -1,0 +1,49 @@
+*{
+    box sizing: border box;
+}
+
+<<<<<<< HEAD:FemScape/public/assets/css/home.css
+
+
+=======
+>>>>>>> f5ab2801accb6e1e3462d346ad736a4debc70111:FemScape/public/assets/css/index.css
+body{
+    font-family: 'Jaldi', sans-serif;
+    margin: 0;
+}
+
+.card{
+    width: 18rem;
+    height: 23rem;
+    border: none;
+    background-color: #ffffff;
+    color: #0079FF;
+}
+
+.size{
+    width: 18rem;
+    height: 18rem;
+}
+
+.b-radius{
+    border-radius: 1.25rem;
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-text{
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.delete-button{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit; 
+    color: inherit;
+}
